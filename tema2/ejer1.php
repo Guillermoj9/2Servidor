@@ -11,30 +11,24 @@
 <body>
     <?php
 
-$clientes = array(
-    array( "nombre" => "Cosentino"),
-    array( "nombre" => "Garciden"),
-    array( "nombre" => "Deretil"),
-    array( "nombre" => "Makito"),
-    array( "nombre" => "Globomatik")
-);
-foreach($clientes as $nombre) {
-    echo "<tr>";
-    echo "<td>" ."<br>". $nombre['nombre'] . "</td>";
+    $clientes = array("Cosentino", "Garciden", "Deretil", "Makito", "Globomatik");
 
-}
-    function convierteClientes($nombres,$opcion){
-        $letra="";
-        if($letra == "L"){
-          echo  strtolower($nombres);
-        }else if ($letra == "U"){
-            echo strtoupper($nombres);
-        }else if ($letra == "M"){
-            
+    function convierteClientes($nombre, $opcion)
+    {
+
+        switch ($opcion) {
+            case "L":
+                return strtolower($nombre);
+                break;
+            case "U":
+                return strtoupper($nombre);
+                break;
+            case "M":
+                return ($nombre);
+                break;
         }
     }
-
-    echo convierteClientes($clientes)
+    echo convierteClientes($nombre,"L",[3]);
 
     ?>
 </body>
