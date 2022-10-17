@@ -14,15 +14,17 @@
 $lista_ES = array("amigo","mechero","sol","pastilla","ordenador","mesa","papel","agua","fiesta","cerveza");
 $lista_EN = array("friend","lighter","sun","pill","computer","table","paper","water","party","beer");
 
-$palabra = "amigo";
 
+function dicc($lista_ES,$lista_EN){
+    $palabra = "ordenador";
 for ($i=0; $i<count($lista_ES);$i++){
     if ($lista_ES[$i]==$palabra){
         return $lista_EN[$i];
     }else 
-        echo "esa palabra no esta";
+        echo "-";
 }
-
+}
+echo dicc($lista_ES,$lista_EN);
 
 ?>
 

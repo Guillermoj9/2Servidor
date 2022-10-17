@@ -36,7 +36,14 @@
 					</button>
 					<div class="collapse" id="tema2">
 					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-						<li><a href="/tema2/eje1.php" class="link-dark rounded">Ejercicio 1</a></li>
+						<li><a href="/tema2/ejer1.php" class="link-dark rounded">Ejercicio 1</a></li>
+						<li><a href="/tema2/ejer2.php" class="link-dark rounded">Ejercicio 2</a></li>
+						<li><a href="/tema2/ejer3.php" class="link-dark rounded">Ejercicio 3</a></li>
+						<li><a href="/tema2/ejer4.php" class="link-dark rounded">Ejercicio 4</a></li>
+						<li><a href="/tema2/ejer5.php" class="link-dark rounded">Ejercicio 5</a></li>
+						<li><a href="/tema2/ejer6.php" class="link-dark rounded">Ejercicio 6</a></li>
+						<li><a href="/tema2/ejer7.php" class="link-dark rounded">Ejercicio 7</a></li>
+						<li><a href="/tema2/ejer8.php" class="link-dark rounded">Ejercicio 8</a></li>
 					</ul>
 					</div>
 				</li>

@@ -13,22 +13,34 @@
 
     $clientes = array("Cosentino", "Garciden", "Deretil", "Makito", "Globomatik");
 
-    function convierteClientes($nombre, $opcion)
-    {
+    function convert($clientes, $opcion) {
+       
+        if ($opcion == "L"){
+            return strtolower($clientes);
+            break;
+        }else if ($opcion == "U"){
+            return strtoupper($clientes);
+            break;
+        }else {
+            return($clientes);
+        }
+
+
+
 
         switch ($opcion) {
             case "L":
-                return strtolower($nombre);
+                return strtolower($clientes);
                 break;
             case "U":
-                return strtoupper($nombre);
+                return strtoupper($clientes);
                 break;
             case "M":
-                return ($nombre);
+                return ($clientes);
                 break;
         }
     }
-    echo convierteClientes($nombre,"L",[3]);
+    echo convert($clientes,$opcion);
 
     ?>
 </body>
