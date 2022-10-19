@@ -11,36 +11,27 @@
 <body>
     <?php
 
-    $clientes = array("Cosentino", "Garciden", "Deretil", "Makito", "Globomatik");
+    $cliente = array("Cosentino", "Garciden", "Deretil", "Makito", "Globomatik");
 
-    function convert($clientes, $opcion) {
-       
-        if ($opcion == "L"){
-            return strtolower($clientes);
-            break;
-        }else if ($opcion == "U"){
-            return strtoupper($clientes);
-            break;
-        }else {
-            return($clientes);
-        }
-
-
-
+    function convert($cliente, $opcion) {
 
         switch ($opcion) {
             case "L":
-                return strtolower($clientes);
+                return strtolower($cliente);
                 break;
             case "U":
-                return strtoupper($clientes);
+                return strtoupper($cliente);
                 break;
             case "M":
-                return ($clientes);
+                return ($cliente);
                 break;
         }
     }
-    echo convert($clientes,$opcion);
+    echo convert($cliente[3],"L");
+    echo "<br>";
+    echo convert($cliente[3],"M");
+    echo "<br>";
+    echo convert($cliente[3],"U");
 
     ?>
 </body>
