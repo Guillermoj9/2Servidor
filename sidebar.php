@@ -56,6 +56,7 @@
 			<div class="collapse" id="tema3">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 					<li><a href="/tema3/practica1/admin/" class="link-dark rounded">Practica 1</a></li>
+					<li><a href="/tema3/cookies/index.php" class="link-dark rounded">Practica Cookiess</a></li>
 
 				</ul>
 			</div>
