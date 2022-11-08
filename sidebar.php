@@ -57,7 +57,7 @@
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 					<li><a href="/tema3/practica1/login.php" class="link-dark rounded">Panel admin</a></li>
 					<li><a href="/tema3/cookies/index.php" class="link-dark rounded">Practica Cookiess</a></li>
-
+					<li><a href="/tema3/ahorcado/jugar.php" class="link-dark rounded">AHORCADO</a></li>
 				</ul>
 			</div>
 		</li>
