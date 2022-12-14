@@ -90,7 +90,8 @@
 			</button>
 			<div class="collapse" id="dashboard-collapse">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
+				<li><a href="/tema6/regalos/index.php" class="link-dark rounded">regalos</a></li>
+				<li><a href="/tema6/blackjack/index.php" class="link-dark rounded">BlackJack</a></li>
 				</ul>
 			</div>
 		</li>

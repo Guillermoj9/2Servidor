@@ -84,7 +84,7 @@ public static function getPrestamosEstado($estado) {
 
     //Consulta BBDD
     $stmt = $conexion->prepare("SELECT prestamos.id, prestamos.idusuario,prestamos.estado, prestamos.idlibro,prestamos.fecha_inicio,prestamos.fecha_fin, usuarios.nombre FROM prestamos 
-    JOIN usuarios JOIN libros WHERE prestamos.idlibro = libros.id and prestamos.idusuario = usuarios.id and prestamos.estado = ?");
+    JOIN usuarios JOIN libros WHERE prestamos.idlibro = libros.id and prestamos.idusuario = usuarios.id and estado = ?");
     $stmt->bindValue(1, $estado);
     $stmt->execute();
    

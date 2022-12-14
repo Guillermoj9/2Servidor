@@ -18,15 +18,19 @@ class VistaTodosPrestamos
     <form method="post" action="enrutador.php">
       <label for="estado">Estado</label>
       <select name="estado" id="estado-select">
-        <?php foreach ($prestamos as $prestamo) {
-          echo ' <option name="estado" value="' . $prestamo->getEstado() . '">' . $prestamo->getEstado() . '</option>';
-        }
-        ?>
+
+        <option value="activo">activo</option>;
+        <option value="devuelto">devuelto</option>;
+        <option value="retraso">retraso</option>;
+
       </select>
-      <?php echo ' <a type="button" class="btn btn-light " href="enrutador.php?accion=buscarEstado&estado=' . $prestamo->getEstado() . '"> Buscar </a> ';     ?>
+      <input type="hidden" name="accion" value="buscarEstado">
+      <button type="submit" class="btn btn-light mt-3">
+        Buscar
+      </button>
     </form>
 
-
+    
 
     <br>
     <form method="post" action="enrutador.php">
