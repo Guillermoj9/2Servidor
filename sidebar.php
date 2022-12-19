@@ -96,5 +96,17 @@
 			</div>
 		</li>
 
+		<li class="mb-1">
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema-7" aria-expanded="false">
+				TEMA 7
+			</button>
+			<div class="collapse" id="tema-7">
+				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+				<li><a href="/tema7/padelea/index.php" class="link-dark rounded">Padel ea</a></li>
+				
+				</ul>
+			</div>
+		</li>
+
 	</ul>
 </div>
