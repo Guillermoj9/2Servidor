@@ -16,7 +16,7 @@
 
             //Error login
             if ($valido == 0) {
-                echo "<script>window.location='enrutador.php?accion=error';</script>";
+               echo "<script>window.location='enrutador.php?accion=error';</script>";
             }
 
             //Login correcto

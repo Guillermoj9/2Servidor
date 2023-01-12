@@ -19,29 +19,30 @@
         <form id='formInsertarPartida'>
           <div class='mb-3'>
           <label for='fecha' class='form-label'>Fecha</label>
-            <input type='date' name='fecha' id='fecha' aria-describedby='emailHelp'>
+            <input type='date' name='fecha' id='fecha' aria-describedby='emailHelp' required>
           </div>
 
           <div class='mb-3'>
           <label for='hora' class='form-label'>Hora</label>
-            <input type='time' name='hora' id='hora' aria-describedby='emailHelp'>
+            <input type='time' name='hora' id='hora' aria-describedby='emailHelp' required>
           </div>
 
           <div class='mb-3'>
             <label for='ciudad' class='form-label'>ciudad</label>
-            <input type='text' name='ciudad' class='form-control' aria-describedby='emailHelp'>
+            <input type='text' name='ciudad' class='form-control' aria-describedby='emailHelp' required>
           </div>
           
           <div class='mb-3'>
             <label for='lugar' class='form-label'>Lugar</label>
-            <input type='text' name='lugar' class='form-control' aria-describedby='emailHelp'>
+            <input type='text' name='lugar' class='form-control' aria-describedby='emailHelp' required>
           </div>
 
           <div class='mb-3'>
             <label for='cubierto' class='form-label'>Cubierto</label>
-            <input type='number' name='cubierto'min="0" max="1" class='form-control' aria-describedby='emailHelp'>
+            <input type='number' name='cubierto'min="0" max="1" class='form-control' aria-describedby='emailHelp' required>
           </div>
           <div class='mb-3'>
+            Estado
             <select name="estado" id="estado-select">
               <option value="pendiente">Abierta</option>
             </select>

@@ -8,7 +8,7 @@
             $partidas = PartidaBD::getPartida($id);
 
             //Llamar a una vista para pintar esas partidas
-            VistaTodasPartidas::render($partidas);
+            VistaPartidas::render($partidas);
         }
         public static function borrarPartida($id){
         

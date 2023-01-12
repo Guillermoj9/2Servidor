@@ -15,8 +15,8 @@ class VistasRegalos
 
 ?>
     <p><button type='button' class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#nuevoRegalo'>
-      Nuevo regalo
-    </button></p>
+        Nuevo regalo
+      </button></p>
 <?php
 
     echo ' 
@@ -32,10 +32,9 @@ class VistasRegalos
                     <p class="card-text">Destinatario: <input type="text" name="destinatario" value="' . $regalo->getDestinatario() . '"></p>
                     <p class="card-text">Precio : <input type="number" name="precio" value="' . $regalo->getPrecio() . '"€</p>
                     <br>
-                    <p>OBLIGATORIO*</p>
+                    
                     <p  class="card-text">Año<input type="date" name="year" value="' . $regalo->getYear() . '"</p>
                     
-
                     <br><br>
                     <select name="estado" id="estado-select">
                     <option>' . $regalo->getEstado() . '</option>
@@ -45,26 +44,17 @@ class VistasRegalos
                         <option value="entregado">Entregado</option>
                     </select>
 
-                    <input type="hidden" name="id" value='. $regalo->getId().'>
+                    <input type="hidden" name="id" value=' . $regalo->getId() . '>
                     
                     <input type="hidden" name="accion" value="modificarRegalo">
                     <button class="btn btn-dark" type="submit">Modificar</button>
                     </form>
                     <br>
-                    <a>-----------------------------------------------------------</a>
-                    
+                   
                     <a class="btn btn-danger" href="enrutador.php?accion=borrarRegalo&id=' . $regalo->getId() . '" >BORRAR</a> 
 
-
-                    <a class="btn btn-success" href="enrutador.php?accion=verEnlaces&id='. $regalo->getId().'" >Ver en tienda</a> 
+                    <a class="btn btn-success" href="enrutador.php?accion=verEnlaces&id=' . $regalo->getId() . '" >Ver en tienda</a> 
                   
-                      
-                   
-                  
-
-                   
-                    
-                    
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                       </div>
