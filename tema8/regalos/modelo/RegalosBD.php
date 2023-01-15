@@ -46,25 +46,47 @@ class RegalosBD {
             [
                 'sort' => ['id' => -1],
             ]);
-        if (isset($regaloMayor))
+        if (isset($regaloMayor)){
             $idValue = $regaloMayor['id'];
-        else
+        }else{
             $idValue = 0;
-
+        }
 
         //Collección 'usuarios'
         $insertOneResult = $conexion->regalos->insertOne([
             'id' => intVal($idValue + 1),
             'nombre' => $regalo->getNombre(),
             'destinatario' => $regalo->getDestinatario(),
-            'precio' => $regalo->getPrecio(),
+            'precio' => intVal($regalo->getPrecio()),
             'estado' => $regalo->getEstado(),
-            'year' => $regalo->getYear(),
+            'year' => intVal($regalo->getYear()),
             'id_usuario' => $regalo->getId_usuario()
         ]);
 
         ConexionBD::cerrar();
     }
+
+
+    
+    public static function modificar($nombre, $destinatario, $precio, $estado, $year,$id)
+    {
+        $conexion = ConexionBD::conectar();
+
+        //Consulta BBDD
+        
+        $updateResult = $conexion->regalos->updateOne(
+            ["id"=>intVal($id)],
+            ['$set'=>["nombre"=>$nombre,
+                      "destinatario"=>$destinatario,
+                      "precio"=>intval($precio),
+                      "estado"=>$estado,
+                      "year"=>intval($year)]]);
+
+        //Usamos FETCH_CLASS para que convierta a objetos las filas de la BD
+
+        ConexionBD::cerrar();
+    }
+
     /*public static function crearRegalo($regalos){
         $conexion = ConexionBD::conectar();
 
@@ -83,7 +105,7 @@ class RegalosBD {
         ConexionBD::cerrar();
     }
 */
-    public static function modificar($nombre, $destinatario, $precio, $estado, $year,$id){
+    /*public static function modificar($nombre, $destinatario, $precio, $estado, $year,$id){
         $conexion = ConexionBD::conectar();
 
         //Consulta BBDD
@@ -100,5 +122,7 @@ class RegalosBD {
 
         ConexionBD::cerrar();
     }
+    */
 }
+
     ?>

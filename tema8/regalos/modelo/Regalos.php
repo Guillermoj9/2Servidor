@@ -11,7 +11,7 @@ Class Regalos {
     protected $year;
     protected $id_usuario;
 
-    public function __construct($id="",$nombre="", $destinatario="",$precio="",$estado="", $year="",$id_usuario="") {
+    public function __construct($id=0,$nombre="", $destinatario="",$precio=0,$estado="", $year=0,$id_usuario="") {
 
         $this->id = $id;
         $this->nombre=$nombre;

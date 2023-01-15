@@ -10,7 +10,7 @@ protected $id;
  protected $prioridad;
  protected $id_regalo;
 
-public function __construct($id="",$nombre="", $enlace="", $precio="", $imagen="",$prioridad="",$id_regalo="") {
+public function __construct($id=0,$nombre="", $enlace="", $precio=0, $imagen="",$prioridad="",$id_regalo="") {
 
     $this->id = $id;
     $this->nombre = $nombre;

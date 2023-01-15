@@ -7,7 +7,7 @@ class EnlacesBD {
 
         $conexion = ConexionBD::conectar("regalos"); //Base de datos 'ejemplo'
 
-        $cursor = $conexion->enlaces->find();
+        $cursor = $conexion->enlaces->find(['id_regalo' => $id]);
 
 
 
@@ -51,14 +51,45 @@ class EnlacesBD {
             'id' => intVal($idValue + 1),
             'nombre' => $enlace->getNombre(),
             'enlace' => $enlace->getEnlace(),
-            'precio' => $enlace->getPrecio(),
+            'precio' => intVal($enlace->getPrecio()),
             'imagen' => $enlace->getImagen(),
-            'prioridad' => $enlace->getPrioridad()
+            'prioridad' => $enlace->getPrioridad(),
+            'id_regalo' => $enlace->getId_regalo()
         ]);
 
         ConexionBD::cerrar();
     }
-    public static function modificarEnlace($nombre,$enlace,$precio,$imagen,$prioridad) {
+
+    public static function modificarEnlace($enlace) {
+        $conexion = ConexionBD::conectar();
+
+        //Hacer el autoincrement
+        //Ordeno por id, y me quedo con el mayor
+        $enlaceMayor = $conexion->enlaces->findOne(
+            [],
+            [
+                'sort' => ['id' => -1],
+            ]);
+        if (isset($enlaceMayor))
+            $idValue = $enlaceMayor['id'];
+        else
+            $idValue = 0;
+
+
+        //Collección 'usuarios'
+        $insertOneResult = $conexion->enlaces->insertOne([
+            'id' => intVal($idValue + 1),
+            'nombre' => $enlace->getNombre(),
+            'enlace' => $enlace->getEnlace(),
+            'precio' => $enlace->getPrecio(),
+            'imagen' => $enlace->getImagen(),
+            'prioridad' => $enlace->getPrioridad(),
+            'id_regalo' => $enlace->getId_regalo()
+        ]);
+
+        ConexionBD::cerrar();
+    }
+    /*public static function modificarEnlace($nombre,$enlace,$precio,$imagen,$prioridad) {
         $conexion = ConexionBD::conectar();
 
         $stmt = $conexion->prepare("UPDATE enlaces SET nombre = ?, enlace = ?,precio = ?, imagen = ?, prioridad= ? WHERE id = ?");
@@ -73,7 +104,7 @@ class EnlacesBD {
 
         ConexionBD::cerrar();
 }
-
+*/
    /* public static function nuevoEnlace($nombre,$enlace,$precio,$imagen,$prioridad,$id_regalo) {
         $conexion = ConexionBD::conectar();
 

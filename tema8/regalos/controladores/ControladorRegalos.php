@@ -18,7 +18,7 @@
         }
 
         public static function crearRegalo($nombre, $destinatario, $precio, $estado, $year,$id_usuario) {
-            $regalos = new Regalos($nombre, $destinatario, $precio, $estado, $year,$id_usuario);
+            $regalos = new Regalos(0, $nombre, $destinatario, $precio, $estado, $year,$id_usuario);
             RegalosBD::crearRegalo($regalos);
             echo "<script>window.location='enrutador.php?accion=mostrarR'</script>";
 

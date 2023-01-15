@@ -20,8 +20,8 @@
         }
        
         public static function crearEnlace($nombre,$enlace,$precio,$imagen,$prioridad,$id_regalo) {
-            $enlaces = new enlaces ($nombre,$enlace,$precio,$imagen,$prioridad,$id_regalo);
-            EnlacesBD::nuevoEnlace($nombre,$enlace,$precio,$imagen,$prioridad,$id_regalo);
+            $enlaces = new enlaces (0,$nombre,$enlace,$precio,$imagen,$prioridad,$id_regalo);
+            EnlacesBD::nuevoEnlace($enlaces);
             echo "<script>window.location='enrutador.php?accion=verEnlaces&id=$id_regalo'</script>";
 
         }
