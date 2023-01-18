@@ -10,7 +10,7 @@ class RegalosBD {
             
         $coleccion = $conexion->regalos;
 
-        $cursor = $coleccion->find(['id_usuario'=>$id]);
+        $cursor = $coleccion->find(['id_usuario'=> intVal($id)]);
 
         //Crear los objetos para devolverlos (MVC), Mongo me devuelve array asociativo
         $regalos = array();
