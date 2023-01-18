@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const app = require('./app');
 const port = 3000
-const urlMongo = "mongodb://root:toor@localhost:27017/";
+//const urlMongo = "mongodb://root:toor@localhost:27017/";
+const urlMongo = "mongodb+srv://guille:1234@cluster0.zhq5qyh.mongodb.net/test";
 
 mongoose.set('strictQuery', false);
 
