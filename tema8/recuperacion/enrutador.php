@@ -46,7 +46,6 @@ if ($_REQUEST) {
         }
         if ($_REQUEST['accion'] == "verJuego") {
             $id = filtrado($_GET['id']);
-            
             ControladorNoticias::verJuegoDetalle($id);
            ControladorNoticias::mostrarNoticias($id,"");
         }

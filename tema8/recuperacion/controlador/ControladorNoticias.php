@@ -18,7 +18,7 @@
         public static function mostrarComentario($idNoticia,$idJuego,$comentario,$nick) {
             //Llamar al modelo para insertar esto
             ComentarioBD::apuntarComentario($idNoticia, $comentario,$idJuego,$nick);
-            $comentario = ComentarioBD::getComentario($idNoticia);
+            //$comentario = ComentarioBD::getComentario($idNoticia);
             VistaNoticias::mostrarNoticiaComentario($idNoticia,$comentario,$idJuego);
             
         }
