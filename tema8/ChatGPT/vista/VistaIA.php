@@ -17,7 +17,7 @@ class VistaIA
       $response = $client->request('POST', 'https://api.openai.com/v1/completions', [
         'body' => '{"model": "text-davinci-003", "prompt": "'.$textoArticulo.'", "temperature": 0, "max_tokens": 1000, "n": 1}',
         'headers' => [
-          'Authorization' => 'Bearer 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',
+          'Authorization' => 'Bearer',
           'accept' => 'application/json',
           'content-type' => 'application/json',
         ],
@@ -27,14 +27,15 @@ class VistaIA
       
       $respuestaJSON = json_decode($respuesta);
       
-      echo $respuestaJSON->choices[0]->text;
+      $articuloTexto =  $respuestaJSON->choices[0]->text;
+      echo $articuloTexto ;
       echo "<br>";
       
       $textoImagen = $texto;
       $response = $client->request('POST', 'https://api.openai.com/v1/images/generations', [
         'body' => '{"prompt": "'.$textoImagen.'", "size": "1024x1024", "n": 1}',
         'headers' => [
-          'Authorization' => 'Bearer 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',
+          'Authorization' => 'Bearer ',
           'accept' => 'application/json',
           'content-type' => 'application/json',
         ],
@@ -56,13 +57,11 @@ class VistaIA
       </div>
       </div>
     </div>';
-      
-      echo "<p><button type='button' class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#nuevoArticulo'>
-       Guardar articulo
-      </button></p>" ;
-      
+            
       echo '
-      <center> <button class="btn btn-dark" href="./VistaArticulo.php" type="submit">Crear articulo</button></center>';
+      <center> <p><a href="./enrutador.php?accion=mostrarArticulo">Nuevo Articulo</a></p>
+               <p><a href="./enrutador.php?accion=guardarArticulo&titulo='.$texto.'&texto='.$articuloTexto.'&imagen='.urlencode($img).'">Guardar Articulo</a></p>
+      </center>';
       include("./vista/pie.php");
     }
    

@@ -3,6 +3,7 @@
 use MongoDB\Client;
 require '../vendor/autoload.php';
 
+
 class ConexionBD {
 
     private static $conexion;

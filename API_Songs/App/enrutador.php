@@ -14,7 +14,7 @@ function autocarga($clase)
         include_once $ruta;
     }
 
-    $ruta = "./vista/$clase.php";
+    $ruta = "./vistas/$clase.php";
     if (file_exists($ruta)) {
         include_once $ruta;
     }
@@ -49,35 +49,34 @@ if ($_REQUEST) {
         if ($_REQUEST['accion'] == "error") {
             ControladorLogin::mostrarFormularioLoginError();
         }
-        if ($_REQUEST['accion'] == "mostrarArticulo") {
-            $id = unserialize($_SESSION['usuario'])->getId();
-            ControladorIA::mostrarArticulo($id);
-        }
         
-         //CheckLogin
+        //CheckLogin
          if ($_REQUEST['accion'] == "checkLogin") {
             $email = filtrado($_REQUEST['email']);
             $password = filtrado($_REQUEST['password']);
             ControladorLogin::chequearLogin($email, $password);
         }
-        //NuevoArticulo
-        if ($_REQUEST['accion'] == "nuevoArticulo"){
-            $texto = $_REQUEST['articulo'] ;
-            ControladorIA::mostrarIA($texto);
-        }
-        //Guardar 
-        if ($_REQUEST['accion'] == "guardarArticulo"){
-            $titulo = $_REQUEST['titulo'] ;
-            $texto = $_REQUEST['texto'] ;
-            $imagen = $_REQUEST['imagen'] ;
-            $fecha=filtrado(date("d/m/Y"));
-            ControladorIA::guardarArticulo($titulo,$texto,urlencode($imagen),$fecha);
-        }
-        //Destruir sesion
-        if ($_REQUEST['accion'] == "destruirSesion") {
+          //Destruir sesion
+          if ($_REQUEST['accion'] == "destruirSesion") {
             session_destroy();
             echo "<script>window.location='enrutador.php?accion=inicio'</script>";
         }
-        
+       //Mostrar Canciones
+        if ($_REQUEST['accion'] == "mostrarCancion") {
+            $token = implode($_SESSION['token']);
+            ControladorCanciones::mostrarCanciones($token);
+        }
+        //Mostrar TopCanciones
+        if ($_REQUEST['accion'] == "mostrarTop") {
+            $token = implode($_SESSION['token']);
+            ControladorCanciones::mostrarTop($token);
+        }
+        //Sumar nota
+        if ($_REQUEST['accion'] == "puntuar") {
+            $token = implode($_SESSION['token']);
+            $id = filtrado($_REQUEST['id']);
+            $assessment = filtrado($_REQUEST['valoracion']);
+            ControladorCanciones::puntuar($token,$id,$assessment);
+        }      
     }
 }

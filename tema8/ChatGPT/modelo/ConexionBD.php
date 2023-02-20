@@ -1,7 +1,7 @@
 <?php
+require '../vendor/autoload.php';
 
 use MongoDB\Client;
-require '../vendor/autoload.php';
 
 class ConexionBD {
 
